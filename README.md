@@ -1,2 +1,2 @@
-# sql_notes
-MySQL Notes
+# SQL Notes
+## MySQL ;)
