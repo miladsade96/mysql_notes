@@ -107,7 +107,7 @@ WHERE birth_date > "1990-01-01";    -- Date default format in sql: yyyy-mm-dd
 ```
 ---
 
-## AND, OR, NOT
+## AND, OR, NOT:
 
 #### Selecting all customers that are born after january first 1990 and have points more than 1000:
 ```mysql
@@ -143,6 +143,26 @@ Select * FROM customers_table WHERE NOT (birth_date > "1990-01-01" OR points > 1
 -- Equivalent to below:
 
 Select * FROM customers_table WHERE birth_date <= "1990-01-01" AND points <= 1000;
+```
+
+---
+
+## IN:
+
+#### Selecting all customers that are located in virginia or georgia or florida:
+```mysql
+SELECT * FROM customers_table WHERE state = "VA" OR state = "GA" OR state = "FL";
+
+-- Equivalent to below using IN operator:
+
+Select * FROM customers_table WHERE state IN ("VA", "GA", "FL");
+```
+
+---
+
+#### Selecting all customers that are not located in virginia or georgia or florida:
+```mysql
+SELECT * FROM customers_table WHERE state NOT IN ("VA", "GA", "FL");
 ```
 
 ---
