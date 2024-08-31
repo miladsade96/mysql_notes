@@ -177,3 +177,51 @@ SELECT * FROM customers_table where points BETWEEN 1000 AND 3000;
 ```
 
 ---
+
+## LIKE:
+
+#### Selecting only customers who's last name starts with `b`:
+```mysql
+SELECT * FROM customers_table WHERE last_name LIKE "b%";
+
+-- % means any number of characters - case insensitive
+```
+
+---
+
+#### Selecting only customers who's last name starts with `brush`:
+```mysql
+SELECT * FROM customers_table WHERE last_name LIKE "brush%";
+```
+
+---
+
+#### Selecting all customers who have `b` somewhere in their last name:
+```mysql
+SELECT * FROM cusomers_table WHERE last_name LIKE "%b%";
+```
+
+---
+
+#### Selecting only customers who's last name ends with `y`:
+```mysql
+SELECT * FROM customers_table WHERE last_name LIKE "%y";
+```
+
+---
+
+#### Selecting only customers whose length of their last name is 6 characters and ends with `y`;
+```mysql
+SELECT * FROM customers_table WHERE last_name LIKE "_____y";
+
+-- _ means a single character
+```
+
+---
+
+#### Selecting only customers whose length of their last name is 6 characters and starts with `b` and ends with `y`;
+```mysql
+SELECT * FROM customers_table WHERE last_name LIKE "b____y";
+```
+
+---
