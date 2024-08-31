@@ -166,3 +166,14 @@ SELECT * FROM customers_table WHERE state NOT IN ("VA", "GA", "FL");
 ```
 
 ---
+
+## BETWEEN:
+
+#### Selecting all customers that have more than 1000 and less than 3000 points:
+```mysql
+SELECT * FROM customers_table where points BETWEEN 1000 AND 3000;
+
+-- Range is inclusive ---> 1000 <= points <= 3000 
+```
+
+---
