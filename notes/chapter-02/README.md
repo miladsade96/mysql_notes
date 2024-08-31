@@ -32,3 +32,38 @@ SELECT * FROM customers_table ORDER BY first_name;
 ```mysql
 -- SELECT * FROM customers_table;
 ```
+
+---
+
+#### Selecting specific columns to get from a table:
+```mysql
+SELECT first_name, last_name, points FROM customers_table;
+```
+
+---
+
+#### Executing an arithmetic expression based on the column of the table:
+```mysql
+--- Order of math operators matter
+SELECT first_name, last_name, points, points * 10 + 100 FROM customers_table;
+```
+
+---
+
+#### Specifying an alias to arithmetic expression:
+```mysql
+SELECT 
+    first_name,
+    last_name,
+    points,
+    points * 10 + 100 AS discount_factor
+FROM customers_table;
+--- Alias name should be sourounded by quotes in case there is a space between
+```
+
+---
+
+#### Selecting a unique list of values in the column:
+```mysql
+SELECT DISTINCT state FROM customers_table;
+```
