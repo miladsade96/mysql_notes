@@ -99,10 +99,50 @@ SELECT * from customers_table WHERE state != "VA";
 
 ---
 
-#### Selecting only customers was born after january first 1990:
+#### Selecting only customers are born after january first 1990:
 ```mysql
 SELECT *
 FROM customers_table
 WHERE birth_date > "1990-01-01";    -- Date default format in sql: yyyy-mm-dd
 ```
+---
+
+## AND, OR, NOT
+
+#### Selecting all customers that are born after january first 1990 and have points more than 1000:
+```mysql
+Select * From customers_table WHERE birth_date > "1990-01-01" AND points > 1000;
+
+-- Both conditions should be true
+```
+
+---
+
+#### Selecting all customers that are born after january first 1990 or have points more than 1000:
+```mysql
+Select * FROM customers_table WHERE birth_date > "1990-01-01" OR points > 1000;
+
+-- At least one of the conditions should be true
+```
+
+---
+
+#### Selecting all customers that are born either after 1990 or they have more than 1000 points and live in virginia:
+```mysql
+SELECT * from customers_table WHERE birth_date > "1990-01-01" OR points > 1000 AND state = "VA";
+
+-- AND operator always evaluated before OR
+```
+
+---
+
+#### Selecting all customers that are not born after january first 1990 or not have points more than 1000:
+```mysql
+Select * FROM customers_table WHERE NOT (birth_date > "1990-01-01" OR points > 1000);
+
+-- Equivalent to below:
+
+Select * FROM customers_table WHERE birth_date <= "1990-01-01" AND points <= 1000;
+```
+
 ---
