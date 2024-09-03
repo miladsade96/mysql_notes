@@ -347,3 +347,17 @@ SELECT first_name, last_name, 10 AS points FROM customers_table ORDER BY points,
 ```
 
 ---
+
+## LIMIT:
+
+#### Selecting only 3 customers from customers table:
+```mysql
+SELECT * FROM customers_table LIMIT 3;
+```
+
+---
+
+#### Implementing the pagination in sql so that skip first 6 records and get other 3 records after skip section:
+```mysql
+SELECT * FROM customers_table LIMIT 6, 3;
+```
