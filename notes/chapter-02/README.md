@@ -303,3 +303,47 @@ SELECT * FROM customers_table WHERE phone IS NOT NULL;
 ```
 
 ---
+
+## ORDER BY:
+
+#### Selecting all customers and sort them based on their `first name` in ascending order:
+```mysql
+SELECT * FROM customers_table ORDER BY first_name;
+```
+
+---
+
+#### Selecting all customers and sort them based on their `first name` in descending order:
+```mysql
+SELECT * FROM customers_table ORDER BY first_name DESC;
+```
+
+---
+
+#### Selecting all customers and sort them based on their `state` in ascending order and for each `state` sort them based on their `first name` in ascending order:
+```mysql
+SELECT * FROM customers_table ORDER BY state, first_name;
+```
+
+---
+
+#### Selecting all customers and sort them based on their `state` in descending order and for each `state` sort them based on their `first name` in descending order:
+```mysql
+SELECT * FROM customers_table ORDER BY state DESC , first_name DESC;
+```
+
+---
+
+#### Selecting first name and last name of all customers and sort them based on their birthdate:
+```mysql
+SELECT first_name, last_name FROM customers_table ORDER BY birth_date;
+```
+
+---
+
+#### Selecting and sorting customers based on an alias:
+```mysql
+SELECT first_name, last_name, 10 AS points FROM customers_table ORDER BY points, first_name;
+```
+
+---
