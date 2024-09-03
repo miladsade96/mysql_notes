@@ -225,3 +225,65 @@ SELECT * FROM customers_table WHERE last_name LIKE "b____y";
 ```
 
 ---
+
+## REGEXP:
+
+#### Selecting all customers who have `field` in their last name:
+```mysql
+SELECT * FROM custoemrs_table WHERE last_name LIKE "%field%"
+
+-- Equivalent to below:
+
+SELECT * FROM customers_table WHERE last_name REGEXP "field";
+```
+
+---
+
+#### Selecting all customers whose last name starts with `field`:
+```mysql
+SELECT * From customers_table WHERE last_name REGEXP "^field";
+```
+
+---
+
+#### Selecting all customers whose last_name ends with `field`:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "field$";
+```
+
+---
+
+#### Selecting all customers who have words `field` or `mac` in their last name:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "field|mac";
+```
+
+---
+
+#### Selecting all customers who have words `field` or `mac` or `rose` in their last name:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "field|mac|rose";
+```
+
+---
+
+#### Selecting all customers whose last name ends with word `field` or have words `mac` or `rose` in their last name:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "field$|mac|rose";
+```
+
+---
+
+#### Selecting all customers who have words `ge` or `ie` or `me` in their last name:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "[gim]e";
+```
+
+---
+
+#### Selecting all customers who have range of characters from `a` to `h` before character `e` in their last name:
+```mysql
+SELECT * FROM customers_table WHERE last_name REGEXP "[a-h]e";
+```
+
+---
