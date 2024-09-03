@@ -287,3 +287,19 @@ SELECT * FROM customers_table WHERE last_name REGEXP "[a-h]e";
 ```
 
 ---
+
+## IS NULL:
+
+#### Selecting all customers that do not have a phone number:
+```mysql
+SELECT * FROM customers_table WHERE phone IS NULL;
+```
+
+---
+
+#### Selecting all customers that do have a phone number:
+```mysql
+SELECT * FROM customers_table WHERE phone IS NOT NULL;
+```
+
+---
