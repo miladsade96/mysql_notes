@@ -45,3 +45,15 @@ JOIN customers_table c
 ON o.customer_id = c.customer_id;
 ```
 ---
+
+## Joining Across Databases:
+
+#### Joining `order_items` table from `sql_store` database with `products` table from `sql_inventory` database based on `product_id`:
+```mysql
+SELECT *
+FROM sql_store.order_items oi
+JOIN sql_inventory.products p
+ON oi.product_id = p.product_id;
+```
+
+---
