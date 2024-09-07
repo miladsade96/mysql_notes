@@ -57,3 +57,15 @@ ON oi.product_id = p.product_id;
 ```
 
 ---
+
+## Self Joins:
+
+#### Joining `employees` table from `sql_hr` database with itself in order to get the `employee_id`, `employee first name` and `manager first name`:
+```mysql
+SELECT e.employee_id, e.first_name AS "Employee FirstName", m.first_name AS "Manager FirstName"
+FROM sql_hr.employees e
+JOIN sql_hr.employees m
+ON e.reports_to = m.employee_id;
+```
+
+---
