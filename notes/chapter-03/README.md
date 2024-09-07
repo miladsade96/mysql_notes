@@ -69,3 +69,19 @@ ON e.reports_to = m.employee_id;
 ```
 
 ---
+
+## Joining Multiple Tables:
+
+#### Joining `orders`, `customers` and `orders_statuses` tables based on `customer_id` and `order_status_id` columns. And then selecting only `order_id`, `order_date`, `first_name`, `last_name` and `status_name` columns:
+```mysql
+USE sql_store;
+
+SELECT o.order_id, o.order_date, c.first_name, c.last_name, os.name AS status
+FROM orders o
+JOIN customers c
+ON o.customer_id = c.customer_id
+JOIN order_statuses os
+ON o.status = os.order_status_id;
+```
+
+---
