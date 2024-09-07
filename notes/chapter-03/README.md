@@ -85,3 +85,16 @@ ON o.status = os.order_status_id;
 ```
 
 ---
+
+## Compound Join Condition:
+
+#### Joining two `order_items` and `order_item_notes` tables based on two `order_id` and `product_id` columns:
+```mysql
+SELECT *
+FROM order_items oi
+JOIN order_item_notes oin
+ON oi.order_id = oin.order_Id
+AND oi.product_id = oin.product_id;
+```
+
+---
