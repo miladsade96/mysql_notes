@@ -118,3 +118,26 @@ WHERE o.customer_id = c.customer_id;
 ```
 
 ---
+
+## OUTER JOIN:
+
+#### Joining `customers` and `orders` tables based on `customer_id` and selecting only `customer_id`, `first_name` and `order_id` columns and finally sort the result based on `customer_id` colum:
+```mysql
+SELECT *
+FROM customers_table c 
+JOIN orders_table o 
+ON o.customer_id = c.customer_id
+ORDER BY c.customer_id;
+```
+And Extend the query above to display the customers who do not have order using outer join:
+```mysql
+SELECT *
+FROM customers_table c 
+LEFT JOIN orders_table o 
+ON o.customer_id = c.customer_id
+ORDER BY c.customer_id;
+
+-- All customers regardles of having an order or not
+```
+
+---
