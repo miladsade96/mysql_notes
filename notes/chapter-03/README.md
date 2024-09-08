@@ -141,3 +141,18 @@ ORDER BY c.customer_id;
 ```
 
 ---
+
+## OUTER JOIN Between Multiple Tables:
+
+#### Joining `customers` and `orders` tables based on `customer_id` and display all customers even those who does not have `order` and then joining `customers` and `shippers` tables based on `shipper_id` and display all `orders` even those who does not have `shipper` and finally selecting `customer_id`, `first_name`, `order_id` and `shipper name` columns and order them based on `customer_id` to display as result:
+```mysql
+SELECT *
+FROM customers c 
+LEFT JOIN orders o 
+ON c.customer_id = o.customer_id
+LEFT JOIN shippers sh
+ON o.shipper_id = sh.shipper_id
+ORDER BY c.customer_id;
+```
+
+---
