@@ -98,3 +98,23 @@ AND oi.product_id = oin.product_id;
 ```
 
 ---
+
+## Implicit Join Syntax:
+
+#### Rewriting query below:
+```mysql
+SELECT *
+FROM orders_table o 
+JOIN customers_table c 
+ON o.customer_id = c.customer_id;
+```
+Using implicit join syntax:
+```mysql
+SELECT *
+FROM orders_table o, customers_table c 
+WHERE o.customer_id = c.customer_id;
+
+-- This is a bad practice, use always explicit join syntax
+```
+
+---
