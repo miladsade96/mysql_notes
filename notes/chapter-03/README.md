@@ -156,3 +156,18 @@ ORDER BY c.customer_id;
 ```
 
 ---
+
+## Self Outer Join
+
+#### Selecting all employees whether they have a manager or not. This query will return the manager row itself as result because the manager is also an employee in the organization:
+```mysql
+Select 
+    e.employee_id,
+    e.first_name,
+    m.first_name AS manager
+FROM employees e 
+LEFT JOIN employees m
+ON e.reports_to = m.employee_id;
+```
+
+---
