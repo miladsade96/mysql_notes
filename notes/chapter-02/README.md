@@ -1,6 +1,7 @@
 # Retrieving Data From A Single Table
 
 ## SELECT:
+The `SELECT` clause in `SQL` is used to specify the columns that you want to retrieve from a table
 
 #### Selecting a database to query:
 ```mysql
@@ -73,6 +74,7 @@ SELECT DISTINCT state FROM customers_table;
 ---
 
 ## WHERE:
+The `WHERE` clause in `SQL` is used to filter the results of a query based on specific conditions. It allows you to specify criteria that must be met for a row to be included in the result set.
 
 #### Selecting all customers with *points* greater than 3000:
 ```mysql
@@ -108,6 +110,7 @@ WHERE birth_date > "1990-01-01";    -- Date default format in sql: yyyy-mm-dd
 ---
 
 ## AND, OR, NOT:
+`AND`, `OR`, and `NOT` are logical operators used in `SQL` to combine multiple conditions in the `WHERE` clause.
 
 #### Selecting all customers that are born after january first 1990 and have points more than 1000:
 ```mysql
@@ -148,6 +151,7 @@ Select * FROM customers_table WHERE birth_date <= "1990-01-01" AND points <= 100
 ---
 
 ## IN:
+The `IN` operator in `SQL` is used to check if a value exists within a list of values. It's a convenient way to simplify queries that involve multiple `OR` conditions.
 
 #### Selecting all customers that are located in virginia or georgia or florida:
 ```mysql
@@ -168,6 +172,7 @@ SELECT * FROM customers_table WHERE state NOT IN ("VA", "GA", "FL");
 ---
 
 ## BETWEEN:
+The `BETWEEN` operator in `SQL` is used to check if a value falls within a specified range. It's a convenient way to simplify queries that involve multiple comparison operators.
 
 #### Selecting all customers that have more than 1000 and less than 3000 points:
 ```mysql
@@ -179,6 +184,7 @@ SELECT * FROM customers_table where points BETWEEN 1000 AND 3000;
 ---
 
 ## LIKE:
+The `LIKE` operator in `SQL` is used for pattern matching. It allows you to search for rows that contain specific patterns within a column.
 
 #### Selecting only customers who's last name starts with `b`:
 ```mysql
@@ -227,6 +233,7 @@ SELECT * FROM customers_table WHERE last_name LIKE "b____y";
 ---
 
 ## REGEXP:
+The `REGEXP` operator is a powerful tool for pattern matching in `SQL`, providing more flexibility and advanced features compared to the `LIKE` operator. While its availability and syntax may vary slightly across different database systems, the core concept remains consistent.
 
 #### Selecting all customers who have `field` in their last name:
 ```mysql
@@ -289,6 +296,7 @@ SELECT * FROM customers_table WHERE last_name REGEXP "[a-h]e";
 ---
 
 ## IS NULL:
+The `IS NULL` operator in SQL is used to check if a value is null. A null value represents the absence of data.
 
 #### Selecting all customers that do not have a phone number:
 ```mysql
@@ -305,6 +313,7 @@ SELECT * FROM customers_table WHERE phone IS NOT NULL;
 ---
 
 ## ORDER BY:
+The `ORDER BY` clause in SQL is used to sort the results of a query based on one or more columns. It allows you to arrange the rows in `ascending` or `descending` order.
 
 #### Selecting all customers and sort them based on their `first name` in ascending order:
 ```mysql
@@ -349,6 +358,7 @@ SELECT first_name, last_name, 10 AS points FROM customers_table ORDER BY points,
 ---
 
 ## LIMIT:
+The `LIMIT` clause in `SQL` is used to specify the maximum number of rows to return from a query. It's particularly useful when dealing with `large datasets` or when you only need a subset of the results.
 
 #### Selecting only 3 customers from customers table:
 ```mysql
