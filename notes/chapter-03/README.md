@@ -1,6 +1,7 @@
 # Retrieving Data From Multiple Tables
 
 ## INNER JOIN:
+An `INNER JOIN` is a type of `JOIN` operation used to combine rows from two or more tables based on a matching column value. It returns only the rows that have matching values in both tables.
 
 #### Joining `orders_table` and `customers_table` based on `customer_id`:
 ```mysql
@@ -47,6 +48,7 @@ ON o.customer_id = c.customer_id;
 ---
 
 ## Joining Across Databases:
+Using `database_name` prefix for `table_name`: 
 
 #### Joining `order_items` table from `sql_store` database with `products` table from `sql_inventory` database based on `product_id`:
 ```mysql
@@ -59,6 +61,7 @@ ON oi.product_id = p.product_id;
 ---
 
 ## Self Joins:
+A `self join` is a type of `JOIN` operation where a table is joined with `itself`. It's useful when you need to compare rows within the same table based on certain criteria.
 
 #### Joining `employees` table from `sql_hr` database with itself in order to get the `employee_id`, `employee first name` and `manager first name`:
 ```mysql
@@ -71,6 +74,7 @@ ON e.reports_to = m.employee_id;
 ---
 
 ## Joining Multiple Tables:
+Combining data from multiple tables based on related columns:
 
 #### Joining `orders`, `customers` and `orders_statuses` tables based on `customer_id` and `order_status_id` columns. And then selecting only `order_id`, `order_date`, `first_name`, `last_name` and `status_name` columns:
 ```mysql
@@ -87,6 +91,7 @@ ON o.status = os.order_status_id;
 ---
 
 ## Compound Join Condition:
+A `compound join condition` is a `combination of multiple conditions` used to `join` tables in a `SQL` query. This allows you to specify more complex relationships between the tables.
 
 #### Joining two `order_items` and `order_item_notes` tables based on two `order_id` and `product_id` columns:
 ```mysql
@@ -120,6 +125,7 @@ WHERE o.customer_id = c.customer_id;
 ---
 
 ## OUTER JOIN:
+`Outer joins` are used to `combine rows` from `two or more tables` based on a matching column value, but unlike `inner joins`, they also `include` rows from one or both tables that do not have matching values.
 
 #### Joining `customers` and `orders` tables based on `customer_id` and selecting only `customer_id`, `first_name` and `order_id` columns and finally sort the result based on `customer_id` colum:
 ```mysql
@@ -158,6 +164,7 @@ ORDER BY c.customer_id;
 ---
 
 ## Self Outer Join
+A `self outer join` is a type of `outer join` where a table is joined with itself. It's useful when you want to compare rows within a single table based on certain criteria, while `preserving all rows` from the table
 
 #### Selecting all employees whether they have a manager or not. This query will return the manager row itself as result because the manager is also an employee in the organization:
 ```mysql
