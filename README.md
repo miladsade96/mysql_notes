@@ -1,5 +1,15 @@
-# MySQL Notes
+![Logo](assets/mysql_notes.png)
 
-### Table of contents:
-1. [Retrieving data from a single table](notes/chapter-02/README.md)
-2. [Retrieving data from multiple tables](notes/chapter-03/README.md)
+Practical sql commands to query data from mysql databases that you may need in your work life as a backend or fullstack
+developer
+
+## Authors
+
+- [Milad Sadeghi DM](https://www.github.com/miladsade96)
+
+
+
+## Table of Contents
+
+1. [Retrieving Data From A Single Table](notes/chapter-02/README.md)
+2. [Retrieving Data From Multiple Tables](notes/chapter-03/README.md)
