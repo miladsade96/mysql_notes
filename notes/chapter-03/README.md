@@ -218,12 +218,26 @@ JOIN order_item_notes oin
     ON oi.order_id = oin.order_id
     AND oi.product_id = oin.product_id;
 ```
-We can simplify the above query using `USING` clause:
+#### We can simplify the above query using `USING` clause:
 ```mysql
 SELECT *
 FROM order_items oi
 JOIN order_item_notes oin
     USING (order_id, product_id);
+```
+
+---
+
+## Natural Join:
+`Natural joins` in `MySQL` are a simplified way to join tables based on `common column names` and `data types`. They automatically join tables on columns with the same name, assuming that these columns represent the same entity or relationship.
+
+#### Joining `orders` and `customers` tables based on common column names and then selecting only `order_id` and `first_name` columns:
+```mysql
+SELECT
+    o.order_id,
+    c.first_name
+FROM orders o
+NATURAL JOIN customers c;
 ```
 
 ---
