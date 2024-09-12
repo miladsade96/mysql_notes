@@ -241,3 +241,31 @@ NATURAL JOIN customers c;
 ```
 
 ---
+
+## CROSS JOIN:
+
+A `cross join` is a type of join operation that combines every row from one table with every row from another table.
+It's often used when you want to create a Cartesian product of two tables, which means every possible combination of
+rows from both tables:
+
+#### Cross joining `customers` and `products` tables and selecting only `customer's name` and `product name` and then finally sort ascending based on `customer's name`:
+```mysql
+-- Explicit cross join:
+SELECT 
+    c.first_name AS customer,
+    p.name AS product
+FROM customers c
+CROSS JOIN products p
+ORDER BY c.first_name;
+```
+And:
+```mysql
+-- Implicit cross join:
+SELECT 
+    c.first_name AS customer,
+    p.name AS product
+FROM customers c, products p
+ORDER BY c.first_name;
+```
+
+---
