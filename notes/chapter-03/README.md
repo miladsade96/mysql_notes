@@ -269,3 +269,25 @@ ORDER BY c.first_name;
 ```
 
 ---
+
+## UNION:
+The `UNION` operator in `SQL` is used to combine the result sets of two or more `SELECT` statements. It returns distinct rows from both result sets:
+```mysql
+SELECT
+    order_id,
+    order_date,
+    'Active' AS status
+FROM orders
+WHERE order_date >= '2019-01-01'
+
+UNION
+
+SELECT
+    order_id,
+    order_date,
+    'Archived' AS status
+FROM orders
+WHERE order_date < '2019-01-01';
+```
+
+---
