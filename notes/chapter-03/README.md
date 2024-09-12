@@ -178,3 +178,52 @@ ON e.reports_to = m.employee_id;
 ```
 
 ---
+
+## USING Clause:
+The `USING` clause in `SQL` is a shorthand for specifying a join condition when the `same column name` exists in both tables being joined. It's equivalent to using the `ON` clause with the column name specified explicitly:
+
+#### Joining `orders` and `customers` tables based on `customer_id` and selecting only `order_id` and `first_name` columns:
+```mysql
+SELECT 
+    o.order_id,
+    c.first_name
+FROM orders o
+JOIN customers c
+    -- ON o.customer_id = c.customer_id;
+USING (customer_id);
+```
+
+---
+
+#### Joining `orders` and `customers` tables based on `customer_id` and left joining `orders` and `shippers` tables based on `shipper_id` and then selecting only `order_id`, `first_name` and `shipper_name` columns:
+```mysql
+SELECT 
+    o.order_id,
+    c.first_name,
+    sh.name AS shipper
+FROM orders o
+JOIN customers c
+    USING (customer_id)
+LEFT JOIN shippers sh
+    USING (shipper_id);
+```
+
+---
+
+## USING Clause inside Compound Join Condition:
+```mysql
+SELECT *
+FROM order_items oi
+JOIN order_item_notes oin
+    ON oi.order_id = oin.order_id
+    AND oi.product_id = oin.product_id;
+```
+We can simplify the above query using `USING` clause:
+```mysql
+SELECT *
+FROM order_items oi
+JOIN order_item_notes oin
+    USING (order_id, product_id);
+```
+
+---
