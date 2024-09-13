@@ -13,3 +13,4 @@ developer
 
 1. [Retrieving Data From A Single Table](notes/chapter-02/README.md)
 2. [Retrieving Data From Multiple Tables](notes/chapter-03/README.md)
+3. [Inserting, Updating and Deleting Data](notes/chapter-04/README.md)
