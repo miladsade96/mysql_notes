@@ -46,3 +46,20 @@ VALUES ('Shipper1'),
 ```
 
 ---
+
+## Inserting Hierarchical Rows:
+
+#### Adding a row to `orders` table which has three columns(`customer_id`, `order_date` and `status`) where
+`customer_id` is a foreign key to `customers` table and inserting tow rows to `order_items` table which has four
+columns(`order_id`, `product_id`, `quantity` and `unit_price`) where `order_id` is a foreign key to `orders` table and
+`product_id` is a foreign key to `products` table:
+```mysql
+INSERT INTO orders (customer_id, order_date, status)
+VALUES (1, '2019-01-02', 1);
+
+INSERT INTO order_items
+VALUES (LAST_INSERT_ID(), 1, 1, 2.95),
+       (LAST_INSERT_ID(), 2, 1, 3.95);
+```
+
+---
