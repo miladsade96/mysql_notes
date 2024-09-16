@@ -34,3 +34,15 @@ values (
 ```
 
 ---
+
+## Inserting Multiple Rows:
+
+#### Adding multiple rows at one go to `shippers` table which has two columns (`shipper_id` and `name`) where `shipper_id` is automatic incremented so we don't need to specify it:
+```mysql
+INSERT INTO shippers (name)
+VALUES ('Shipper1'),
+       ('Shipper2'),
+       ('Shipper3');
+```
+
+---
