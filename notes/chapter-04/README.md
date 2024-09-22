@@ -94,3 +94,27 @@ WHERE invoice_id = 1;
 ```
 
 ---
+
+## Updating Multiple Rows:
+
+#### Updating all values of `payment_total` and `payment_date` columns in `invoices` table where `client_id = 3`:
+```mysql
+UPDATE invoices
+SET 
+    payment_total = invoice_total * 0.5,
+    payment_date = due_date
+WHERE client_id = 3;
+```
+
+---
+
+#### Updating all values of `payment_total` and `payment_date` columns in `invoices` table where `client_id = 3` and `client_id = 4`:
+```mysql
+UPDATE invoices
+SET 
+    payment_total = invoice_total * 0.5,
+    payment_date = due_date
+WHERE client_id IN (3, 4);
+```
+
+---
