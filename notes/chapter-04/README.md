@@ -64,7 +64,7 @@ VALUES (LAST_INSERT_ID(), 1, 1, 2.95),
 
 ---
 
-## Creating a copy of a table:
+## Creating A Copy of A Table:
 
 #### Creating a copy table called `orders_archive` and inserting all rows of `orders` table into it:
 ```mysql
@@ -80,6 +80,17 @@ INSERT INTO orders_archive
 SELECT *
 FROM orders
 WHERE order_date < "2019-01-01";
+```
+
+---
+
+## Updating A Row:
+
+#### Updating values of `payment_total` and `payment_date` columns in `invoices` table where `invoice_id = 1`:
+```mysql
+UPDATE invoices
+SET payment_total = 10, payment_date = "2019-03-01"
+WHERE invoice_id = 1;
 ```
 
 ---
