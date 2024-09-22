@@ -63,3 +63,23 @@ VALUES (LAST_INSERT_ID(), 1, 1, 2.95),
 ```
 
 ---
+
+## Creating a copy of a table:
+
+#### Creating a copy table called `orders_archive` and inserting all rows of `orders` table into it:
+```mysql
+CREATE TABLE orders_archive AS 
+SELECT * FROM orders;
+```
+
+---
+
+#### Inserting all records of `orders` table where `order_date < 2019-01-01` and inserting them into `orders_archive` table:
+```mysql
+INSERT INTO orders_archive
+SELECT *
+FROM orders
+WHERE order_date < "2019-01-01";
+```
+
+---
